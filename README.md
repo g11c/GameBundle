@@ -9,7 +9,7 @@ After every move you get feedback.
 White 1 means, that one color/number is right but in the wrong place. 
 Black 1 means, that one color/number is right and in right place. 
 
-How to install?
+##Installation
 
 You can install the GameBundle in 3 steps:
 
@@ -17,6 +17,7 @@ You can install the GameBundle in 3 steps:
 ```
     "require": {
         "g11c/gamebundle": "dev-master"
+    },
 ```
 Then update composer.
 
