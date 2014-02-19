@@ -71,16 +71,24 @@ class Mastermind
     /**
      * Starts the game: 
      * Results of last game will be resetted. 
-     * A new secret code will be generated.
+     * A new secret code will be generated. 
      * 
      * @param type $codeLength
-     * @return string
+     * @param type $code
+     * @return type
      */
-    public function start($codeLength = 4)
+    public function start($codeLength = 4, $code = null)
     {
         $this->codeLength = $codeLength;
         $this->resetResult(); //this could be drop, because it happens before every turn
-        $this->code = $this->randomizer->generateCode();
+        if($code === null)
+        {
+            $this->code = $this->randomizer->generateCode();
+        }
+        else
+        {
+            $this->code = $code;
+        }
         
         return $this->code;
     }
