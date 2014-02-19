@@ -1,0 +1,20 @@
+name: g11c/gamebundle
+type: symfony-bundle
+description: 'Offers small games'
+keywords:
+    - mastermind
+    - bundle
+    - game
+    - play
+homepage: 'https://github.com/g11c/GameBundle'
+license: MIT
+minimum-stability: dev
+authors:
+    - { name: 'Gizela C' }
+require:
+    php: '>=5.3.2'
+    symfony/framework-standard-edition: '2.3.*'
+autoload:
+    psr-0: 
+        'g11c\GameBundle': ""
+target-dir: "g11c/GameBundle"
