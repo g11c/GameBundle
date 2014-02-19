@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
 class MastermindController extends Controller
 {
     /**
-     * Start mastermind game.
+     * Handle mastermind game.
      * 
      * @TODO: user input validation
      * @TODO: use symfony2 forms
