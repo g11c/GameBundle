@@ -1,0 +1,4 @@
+g11c_game_homepage:
+    resource:  "@g11cGameBundle/Controller/"
+    type: annotation
+    prefix: game/

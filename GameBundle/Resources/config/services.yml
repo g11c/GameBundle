@@ -1,0 +1,16 @@
+parameters:
+    #g11c_mastermind.game.class: g11c\Mastermind\Mastermind
+    g11c_game.mastermind.class: g11c\GameBundle\Mastermind\Mastermind
+    g11c_mastermind.code.randomizer.class: g11c\GameBundle\Mastermind\Randomizer
+
+services:
+#    g11c_mastermind.example:
+#        class: %g11c_mastermind.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    
+    g11c_mastermind.code.randomizer:
+        class: %g11c_mastermind.code.randomizer.class%
+    
+    g11c_game.mastermind:
+        class: %g11c_game.mastermind.class%
+        arguments: [@g11c_mastermind.code.randomizer]
