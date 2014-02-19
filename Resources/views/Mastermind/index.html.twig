@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Cheatsheet peeking</button>
+
+            <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  Secret Code: {{ code }}
+                  <p>I know, that u are peeking!</p>
+                </div>
+              </div>
+            </div>
+            
+            {% for turn in turns %}
+                <ul>
+                    <li>{{ turn.code }}, White: {{ turn.result.white }}, Black: {{ turn.result.black }}</li>
+                </ul>
+            {% endfor %}
+            {% if not mastermind.won %}
+                <form method="POST">
+                    <div class="jumbotron">
+                        <label for="usercode">your turn:</label>
+                        <input type="text" class="form-control" id="usercode" name="usercode" placeholder="make your turn">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            {% else %}
+                {% if turns|length == 1 %}
+                    Contratulation! You won in {{ turns|length }} turn.
+                {% else %}
+                    Contratulation! You won in {{ turns|length }} turns.
+                {% endif %}
+            {% endif %}
+            <a href="{{ path('g11c_game_mastermind_restart')}}" class="btn btn-warning btn-lg active" role="button">Restart</a>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    </body>
+</html>
