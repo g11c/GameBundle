@@ -17,9 +17,5 @@
 		"symfony/framework-standard-edition": "2.3.*"
     },
 
-    "autoload": {
-        "psr-0": { "g11c\\GameBundle": "" }
-    },
 
-    "target-dir": "g11c/GameBundle"
 }
