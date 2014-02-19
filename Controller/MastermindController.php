@@ -14,23 +14,10 @@ use Symfony\Component\HttpFoundation\Request;
 class MastermindController extends Controller
 {
     /**
-     * Starting mastermind game.
      * 
-     * First get mastermind service and session. If the code is not already set in 
-     * session a new code has to be generated (happens in row 33) -> this is important
-     * for the interaction with user.
-     * When the code is generated first, it should not be forgotten, except, when 
-     * user wishes to restart.
-     * So the secret code will be remembered in the session.
      * 
-     * When there is POST in the request, I know, that the user has make his/her turn.
-     * Here shoud come the user input validation (TODO).
-     * The userinput is given to the method turn(). There it will go through 
-     * the code comparing logic.
-     * 
-     * It is also important to remember turns. The user has to see all his/her turns.
-     * The turns will be saved in the sesseion.
-     * 
+     * @TODO: user input validation
+     * @TODO: use symfony2 forms
      * @Route("/")
      * @Template()
      * @param \Symfony\Component\HttpFoundation\Request $request
